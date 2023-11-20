@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Version>0.5.1</Version>
+		<ApplicationIcon>resources\textures\icon.ico</ApplicationIcon>
+		<SignAssembly>False</SignAssembly>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(ProjectDir)resources\**" CopyToOutputDirectory="Always" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="resources\textures\icon.ico" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Walgelijk" Version="0.18.8" />
+		<PackageReference Include="Walgelijk.Onion" Version="0.4.24" />
+		<PackageReference Include="Walgelijk.OpenTK" Version="0.15.5" />
+		<PackageReference Include="Walgelijk.ParticleSystem" Version="0.2.22" />
+		<PackageReference Include="Walgelijk.Physics" Version="0.2.12" />
+		<PackageReference Include="Walgelijk.SimpleDrawing" Version="1.24.12" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Update="OpenAL32.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="soft_oal.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
